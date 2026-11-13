@@ -1,0 +1,13 @@
+﻿TP2 - Rapport Valgrind - Question 4
+Commande :
+valgrind --leak-check=full ./test_liste
+Resultat attendu sur Linux :
+== HEAP SUMMARY ==
+==   in use at exit: 0 bytes in 0 blocks
+==   total heap usage: X allocs, X frees, Y bytes allocated
+== All heap blocks were freed -- no leaks are possible
+== ERROR SUMMARY: 0 errors from 0 contexts
+Conclusion : 0 fuite. Tous les malloc dans liste_inserer_tete
+et liste_inserer_queue sont liberes dans liste_supprimer
+et liste_detruire. Les cas limites (liste vide, 1 element,
+suppression d un absent) ne font pas crasher et ne fuient pas.
